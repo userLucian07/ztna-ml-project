@@ -1,1 +1,25 @@
+#import
+import pandas as pd
+from sklearn.preprocessing import LabelEncoder
+from sklearn.tree import DecisionTreeClassifier
+
+#load the sample data
+df = pd.read_csv("../data/sample.csv")
+df
+
+#prepare the data
+le = LabelEncoder()
+
+X = le.fit_transform(df["traffic_type"]).reshape(-1, 1)
+y = le.fit_transform(df["label"])
+
+X, y
+
+
+#train a tiny ML model
+model = DecisionTreeClassifier()
+model.fit(X, y)
+
+print("Model trained successfully.")
+print("Predictions:", model.predict(X))
 
