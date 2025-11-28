@@ -1,0 +1,5 @@
+id,traffic_type,label
+1,http,allowed
+2,ssh,blocked
+3,ftp,allowed
+4,ransomware,blocked
